@@ -1,0 +1,35 @@
+# 沪深300头部ETF规模占指数流通市值比例看板 配置
+
+index_code: "000300"
+index_secid: "1.000300"
+history_start: "2015-01-01"
+
+# 对比曲线：与比例曲线同图展示的指数点位
+extra_indexes:
+  - { code: "000300", name: "沪深300", secid: "1.000300" }
+  - { code: "000001", name: "上证指数", secid: "1.000001" }
+
+# 头部名单锁定：不随每日规模排名变化而调整
+etf_members:
+  - { code: "510300", name: "沪深300ETF华泰柏瑞", secid: "1.510300" }
+  - { code: "510310", name: "沪深300ETF易方达", secid: "1.510310" }
+  - { code: "510330", name: "沪深300ETF华夏", secid: "1.510330" }
+  - { code: "159919", name: "沪深300ETF嘉实", secid: "0.159919" }
+  - { code: "515330", name: "沪深300ETF天弘", secid: "1.515330" }
+  - { code: "510360", name: "沪深300ETF广发", secid: "1.510360" }
+  - { code: "510350", name: "沪深300ETF工银", secid: "1.510350" }
+  - { code: "515390", name: "沪深300ETF华安", secid: "1.515390" }
+  - { code: "515380", name: "沪深300ETF泰康", secid: "1.515380" }
+  - { code: "159673", name: "沪深300ETF鹏华", secid: "0.159673" }
+
+alert:
+  ratio_min: 0.05
+  ratio_max: 30.0
+  jump_pct: 15.0
+
+paths:
+  db: "data/market.db"
+  raw: "data/raw"
+  output: "output/index.html"
+  vendor: "data/vendor_echarts.js"
+  logs: "logs"
